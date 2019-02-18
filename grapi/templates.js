@@ -2,7 +2,7 @@ const pjson = require('./package.json');
 
 const packageTemplate = (appName) => {
   return (
-`{
+    `{
   "name": "${appName}",
   "version": "${pjson.version}",
   "description": "${appName} description",
@@ -28,18 +28,18 @@ const packageTemplate = (appName) => {
   );
 }
 
-const serverjsTemplate = (mongoURL,models,port,authenticate) => {
+const serverjsTemplate = (mongoURL, models, port, authenticate) => {
   let routesDependencies = getRoutesDependencies(models);
   let useRoutes = getUseRoutes(models);
   let sessionUse = '';
-  if(authenticate){
-    routesDependencies +=`const usersRoute = require('./api/routes/usersRoute');
+  if (authenticate) {
+    routesDependencies += `const usersRoute = require('./api/routes/usersRoute');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 `;
-useRoutes += `app.use('/v1/users', usersRoute);
+    useRoutes += `app.use('/v1/users', usersRoute);
 `;
-sessionUse += `mongoose.set('useCreateIndex', true)
+    sessionUse += `mongoose.set('useCreateIndex', true)
 const db = mongoose.connection;
 app.use(session({
   secret: 'huynh duc khoan',
@@ -51,7 +51,7 @@ app.use(session({
 }));`;
   }
   return (
-`// Dependencies
+    `// Dependencies
 const express = require('express');
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
@@ -245,11 +245,11 @@ module.exports = router;
 const routesTemplate = (model, attributes, types) => {
   let modelDefinitions = ` * @typedef ${capitalizeFirst(model)}
 `;
-  for (var i=0;i<attributes.length;i++){
-    modelDefinitions += 
-` * @property {${swaggerType(types[i])}} ${attributes[i]}.required
+  for (var i = 0; i < attributes.length; i++) {
+    modelDefinitions +=
+      ` * @property {${swaggerType(types[i])}} ${attributes[i]}.required
 `
-};  
+  };
   return (
     `// Dependencies
 const express = require('express');
@@ -347,14 +347,14 @@ module.exports = router;
 
 const modelsTemplate = (model, attributes, types) => {
   let schemaAttributes = '';
-  for (var i=0;i<attributes.length;i++){
-    schemaAttributes += 
-` ${attributes[i]}: {
+  for (var i = 0; i < attributes.length; i++) {
+    schemaAttributes +=
+      ` ${attributes[i]}: {
     type: ${types[i]},
     required: true,
   },
 `
-};  
+  };
   return (
     `// Dependencies
 const mongoose = require('mongoose');
@@ -564,7 +564,7 @@ module.exports = router;`
 //Lặp để lấy về tất cả routes dependencies
 const getRoutesDependencies = (models) => {
   let routes = '';
-  for(var i=4;i<models.length;i++)
+  for (var i = 4; i < models.length; i++)
     routes += `const ${models[i]}Route = require('./api/routes/${models[i]}Route');
 `;
   return routes;
@@ -575,7 +575,7 @@ const getRoutesDependencies = (models) => {
 const getUseRoutes = models => {
   let use = '';
 
-  for(var i=4;i<models.length;i++)
+  for (var i = 4; i < models.length; i++)
     use += `app.use('/v1/${models[i]}', ${models[i]}Route);
 `;
   return use;
@@ -584,13 +584,13 @@ const getUseRoutes = models => {
 //Capitalize first character
 //Viết hoa chữ cái đầu tiên
 const capitalizeFirst = (word) => {
-  return word[0].toUpperCase()+word.substr(1, word.length);
+  return word[0].toUpperCase() + word.substr(1, word.length);
 }
 
 //Chuyển kiểu dữ liệu mongoose sang swagger
 const swaggerType = (type) => {
-  if(type == 'String') return 'string';
-  if(type == 'Number') return 'integer';
+  if (type == 'String') return 'string';
+  if (type == 'Number') return 'integer';
 }
 
 module.exports = {
