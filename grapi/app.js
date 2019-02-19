@@ -36,7 +36,7 @@ async function playCode(public_folder, config) {
     console.log(public_folder + config.appName + config.appName + '_' + encode(id) + '.zip');
 
     console.log('Done!!!');
-    return public_folder + config.appName + '_' + encode(id) + '.zip';
+    return config.appName + '_' + encode(id) + '.zip';
     process.exit(0);
     // } else {
     //     console.log('Not exists config.json file, add config.json file... Please...');

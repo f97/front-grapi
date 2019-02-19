@@ -1,4 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="row">
+    <div class="col-xl-12">
+        <div class="breadcrumb-holder">
+            <h1 class="main-title float-left">{{title}}</h1>
+            <ol class="breadcrumb float-right">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item active">{{title}}</li>
+            </ol>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
 
-<button>Download</button>
+<div class="row">
+    <div class="col-xl-12">
+        <form class="text-center" method="POST" action="/build">
+            <div class="form-group">
+                <label for="config-textarea">Nhập vào Json config nào?</label>
+                <textarea class="form-control" id="config-textarea" name="config" rows="5"></textarea>
+            </div>
+            <input type="submit" class="btn btn-outline-secondary">
+        </form>
+    </div>
+</div>

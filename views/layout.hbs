@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome CSS -->
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  <!-- BEGIN CSS for this page -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
+  <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+  <div id="main">
+    <!-- top bar navigation -->
+    {{> navigation}}
+    <!-- End Navigation -->
+    <!-- Left Sidebar -->
+    {{> leftsidebar}}
+    <!-- End Sidebar -->
+    <div class="content-page">
+      <!-- Start content -->
+      <div class="content">
+        {{{body}}}
+      </div>
+    </div>
+  </div>
+  <!-- END main -->
+  <!-- END main -->
+  <script src="assets/js/modernizr.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/detect.js"></script>
+  <script src="assets/js/fastclick.js"></script>
+  <script src="assets/js/jquery.blockUI.js"></script>
+  <script src="assets/js/jquery.nicescroll.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/plugins/switchery/switchery.min.js"></script>
+  <!-- App js -->
+  <script src="assets/js/pikeadmin.js"></script>
+  <!-- END Java Script for this page -->
+</body>
+
 </html>
