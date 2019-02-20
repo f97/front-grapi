@@ -9,8 +9,13 @@
 - Build API from grapi cli
 - Front-end with bootstrap 4
 
-### Version 0.1.1
+#### Version 0.1.1
 
 - Add json editor.
 - Ajax with XMLHttpRequest.
 - ...
+
+#### Version 0.1.2
+
+- Using ajax.
+- Add tree

@@ -1,3 +1,7 @@
+<!-- BEGIN CSS for this page -->
+<link href="assets/plugins/jstree/style.css" rel="stylesheet" type="text/css" />
+<!-- END CSS for this page -->
+
 <div class="row">
     <div class="col-xl-12">
         <div class="breadcrumb-holder">
@@ -10,60 +14,98 @@
         </div>
     </div>
 </div>
-
 <div class="row">
-    <div class="col-xl-12">
+    <div id="form-json" class="col-xl-12">
         <div class="text-center">
             <div class="form-group">
-                <label for="jsonconfig">Nhập vào Json config nào?</label>
-                <div id="jsonconfig" name="config"></div>
+                {{!-- <label for="json-config">Nhập vào Json config nào?</label> --}}
+                <div id="json-config" name="config"></div>
             </div>
             <button onclick="buildAPI()" class="btn btn-outline-secondary">OKE</button>
         </div>
     </div>
 </div>
 
-<div id="demo"></div>
+<div id="api-document">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div id="demo"></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h3><i class="fa fa-folder-open-o"></i> Cấu trúc thư mục API</h3>
+                </div>
+                <div class="card-body">
 
-<script>
-    // create the editor
-    var container = document.getElementById("jsonconfig");
-    var options = {};
-    var editor = new JSONEditor(container, options);
+                    <div id="simpleTree" class="jstree jstree-1 jstree-default jstree-closed">
+                        <ul class="jstree-container-ul jstree-children">
+                            <li class="jstree-node jstree-open"><i class="jstree-icon jstree-ocl"></i><a
+                                    class="jstree-anchor"><i
+                                        class="jstree-icon jstree-themeicon fa fa-folder-open jstree-themeicon-custom"></i>api
+                                </a>
+                                <ul class="jstree-children">
+                                    <li class="jstree-node">
+                                        <i class="jstree-icon jstree-ocl"></i><a class="jstree-anchor" href="#"><i
+                                                class="jstree-icon jstree-themeicon fa fa-folder-open jstree-themeicon-custom"></i>controllers
+                                        </a>
+                                        <ul class="jstree-children">
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>...........</a>
+                                            </li>
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>...........</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="jstree-node"><i class="jstree-icon jstree-ocl"></i><a
+                                            class="jstree-anchor" href="#"><i
+                                                class="jstree-icon jstree-themeicon fa fa-folder-open jstree-themeicon-custom"></i>models
+                                        </a>
+                                        <ul class="jstree-children">
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>...........</a>
+                                            </li>
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>...........</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="jstree-node jstree-open"><i class="jstree-icon jstree-ocl"></i><a
+                                            class="jstree-anchor" href="#"><i
+                                                class="jstree-icon jstree-themeicon fa fa-folder-open jstree-themeicon-custom"></i>routes
+                                        </a>
+                                        <ul class="jstree-children">
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>...........</a>
+                                            </li>
+                                            <li class="jstree-node jstree-leaf"><i class="jstree-icon jstree-ocl"></i><a
+                                                    class="jstree-anchor" href="#"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>............</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor"
+                                    href="#"><i
+                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>package.json</a>
+                            </li>
+                            <li>
+                                <i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor"
+                                    href="#"><i
+                                        class="jstree-icon jstree-themeicon fa fa-file jstree-themeicon-custom"></i>server.js</a>
+                            </li>
+                        </ul>
+                    </div>
 
-    // set json
-    var json = {
-        "appName": "Demo",
-        "mongoURL": "mongodb://Test123:Test123@ds145299.mlab.com:45299/dbtest123",
-        "port": 2308,
-        "authenticate": true,
-        "posts":
-        {
-            "id": "Number",
-            "title": "String",
-            "author": "String"
-        }
-        ,
-        "comments":
-        {
-            "body": "String",
-            "postId": "Number"
-        }
-
-    };
-    editor.set(json);
-
-    function buildAPI() {
-        var json = editor.get();
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("demo").innerHTML =
-                    this.responseText;
-            }
-        };
-        xhttp.open("POST", "/build", true);
-        xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
-        xhttp.send(JSON.stringify(json));
-    }
-</script>
+                </div>
+            </div><!-- end card-->
+        </div>
+    </div>
+</div>

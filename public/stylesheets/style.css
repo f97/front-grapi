@@ -1,3 +1,8 @@
-#jsonconfig {
+#json-config {
     height: 380px;
+    background-color: #FFF;
+}
+
+#api-document {
+    display: none;
 }
