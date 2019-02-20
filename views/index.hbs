@@ -13,12 +13,57 @@
 
 <div class="row">
     <div class="col-xl-12">
-        <form class="text-center" method="POST" action="/build">
+        <div class="text-center">
             <div class="form-group">
-                <label for="config-textarea">Nhập vào Json config nào?</label>
-                <textarea class="form-control" id="config-textarea" name="config" rows="5"></textarea>
+                <label for="jsonconfig">Nhập vào Json config nào?</label>
+                <div id="jsonconfig" name="config"></div>
             </div>
-            <input type="submit" class="btn btn-outline-secondary">
-        </form>
+            <button onclick="buildAPI()" class="btn btn-outline-secondary">OKE</button>
+        </div>
     </div>
 </div>
+
+<div id="demo"></div>
+
+<script>
+    // create the editor
+    var container = document.getElementById("jsonconfig");
+    var options = {};
+    var editor = new JSONEditor(container, options);
+
+    // set json
+    var json = {
+        "appName": "Demo",
+        "mongoURL": "mongodb://Test123:Test123@ds145299.mlab.com:45299/dbtest123",
+        "port": 2308,
+        "authenticate": true,
+        "posts":
+        {
+            "id": "Number",
+            "title": "String",
+            "author": "String"
+        }
+        ,
+        "comments":
+        {
+            "body": "String",
+            "postId": "Number"
+        }
+
+    };
+    editor.set(json);
+
+    function buildAPI() {
+        var json = editor.get();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo").innerHTML =
+                    this.responseText;
+            }
+        };
+        xhttp.open("POST", "/build", true);
+        xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhttp.send(JSON.stringify(json));
+    }
+</script>

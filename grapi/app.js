@@ -4,8 +4,8 @@ const grapiFolder = process.cwd() + '/grapi/';
 const zipper = require('zip-local');
 const rimraf = require("rimraf");
 
-async function playCode(public_folder, config) {
-    // public_folder = 'C:\\Users\\Administrator\\Projects\\front-grapi\\public\\api\\';
+async function playCode(publicFolder, config) {
+    // publicFolder = 'C:\\Users\\Administrator\\Projects\\front-grapi\\public\\api\\';
     // if(fs.existsSync('config.json', 'utf8')){
     // config = await JSON.parse(fs.readFileSync(grapiFolder + 'config.json', 'utf8'));
     let id = await fs.readFileSync(grapiFolder + 'id.txt', 'utf8');
@@ -15,25 +15,25 @@ async function playCode(public_folder, config) {
         }
     })
     let configKeys = await Object.keys(config);
-    if (fs.existsSync(public_folder + config.appName)) {
+    if (fs.existsSync(publicFolder + config.appName)) {
         console.log('The folder ' + config.appName + ' exists!');
         return 0;
     }
-    play.createAppFolder(public_folder, config.appName);
-    play.createPackageJson(public_folder, config.appName);
-    play.createServerjs(public_folder, config.appName, config.mongoURL, configKeys, config.port, config.authenticate);
-    play.createApiFolder(public_folder, config.appName);
+    play.createAppFolder(publicFolder, config.appName);
+    play.createPackageJson(publicFolder, config.appName);
+    play.createServerjs(publicFolder, config.appName, config.mongoURL, configKeys, config.port, config.authenticate);
+    play.createApiFolder(publicFolder, config.appName);
     if (config.authenticate) {
-        play.createAuthentication(public_folder, config.appName);
+        play.createAuthentication(publicFolder, config.appName);
     }
-    play.createControllers(public_folder, config.appName, configKeys);
-    play.createRoutes(public_folder, config.appName, configKeys, config);
-    play.createModel(public_folder, config.appName, configKeys, config);
+    play.createControllers(publicFolder, config.appName, configKeys);
+    play.createRoutes(publicFolder, config.appName, configKeys, config);
+    play.createModel(publicFolder, config.appName, configKeys, config);
 
-    zipper.sync.zip(public_folder + config.appName).compress().save(public_folder + config.appName + '_' + encode(id) + ".zip");
+    zipper.sync.zip(publicFolder + config.appName).compress().save(publicFolder + config.appName + '_' + encode(id) + ".zip");
 
-    rimraf.sync(public_folder + config.appName);
-    console.log(public_folder + config.appName + config.appName + '_' + encode(id) + '.zip');
+    rimraf.sync(publicFolder + config.appName);
+    console.log(publicFolder + config.appName + config.appName + '_' + encode(id) + '.zip');
 
     console.log('Done!!!');
     return config.appName + '_' + encode(id) + '.zip';

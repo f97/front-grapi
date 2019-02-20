@@ -64,8 +64,8 @@ const createRoutes = (public_folder, appName, models, config) => {
       template.homeRouteTemplate());
     console.log(`Writing homeRoute.js`);
     for (var i = 4; i < models.length; i++) {
-      attributes = Object.keys(config[models[i]][0]);
-      types = Object.values(config[models[i]][0]);
+      attributes = Object.keys(config[models[i]]);
+      types = Object.values(config[models[i]]);
       fs.writeFileSync(`${public_folder + appName + '/'}api/routes/${models[i]}Route.js`,
         template.routesTemplate(models[i], attributes, types));
       console.log(`Writing ${models[i]}Route.js`);
@@ -78,8 +78,8 @@ const createRoutes = (public_folder, appName, models, config) => {
 const createModel = (public_folder, appName, models, config) => {
   try {
     for (var i = 4; i < models.length; i++) {
-      attributes = Object.keys(config[models[i]][0]);
-      types = Object.values(config[models[i]][0]);
+      attributes = Object.keys(config[models[i]]);
+      types = Object.values(config[models[i]]);
       fs.writeFileSync(`${public_folder + appName + '/'}api/models/${models[i]}Model.js`,
         template.modelsTemplate(models[i], attributes, types));
       console.log(`Writing ${models[i]}Model.js`);

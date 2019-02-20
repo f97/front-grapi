@@ -26,8 +26,9 @@ router.post('/', async function (req, res, next) {
       ]
     }
     let hostURL = req.protocol + '://' + req.get('host');
-    let apiZipName = await playCode(publicAPIfolder, JSON.parse(req.body.config));
-    res.render('build', { url: hostURL + '/api/' + apiZipName });
+    let apiZipName = await playCode(publicAPIfolder, req.body);
+    res.send(hostURL + '/api/' + apiZipName);
+
   } catch (e) {
     // next(e)
   }
