@@ -1,64 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>{{title}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
-  <!-- Bootstrap CSS -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <!-- Font Awesome CSS -->
-  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <!-- Custom CSS -->
-  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-  <!-- BEGIN CSS for this page -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
-  <!-- END CSS for this page -->
-
-  <!-- JSON Editor -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.29.0/jsoneditor.min.css" rel="stylesheet"
-    type="text/css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.29.0/jsoneditor.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grapi - Công cụ sinh API tự động</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.29.1/jsoneditor.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="adminbody">
-  <div id="main">
-    <!-- top bar navigation -->
-    {{> navigation}}
-    <!-- End Navigation -->
-    <!-- Left Sidebar -->
-    {{> leftsidebar}}
-    <!-- End Sidebar -->
-    <div class="content-page">
-      <!-- Start content -->
-      <div class="content">
-        {{{body}}}
+<body>
+  <header>
+    {{>nav}}
+  </header>
+
+  <section class="hero">
+    {{{body}}}
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        Công cụ được xây dựng ❤️ bởi
+        <a href="https://github.com/f97">f97</a>
+        <br>Source code and CHANGELOG available on
+        <a href="https://github.com/f97/grapi-front">GitHub</a>
       </div>
     </div>
-  </div>
-  <!-- END main -->
-  <!-- END main -->
-  <script src="assets/js/modernizr.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/moment.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/detect.js"></script>
-  <script src="assets/js/fastclick.js"></script>
-  <script src="assets/js/jquery.blockUI.js"></script>
-  <script src="assets/js/jquery.nicescroll.js"></script>
-  <script src="assets/js/jquery.scrollTo.min.js"></script>
-  <script src="assets/plugins/switchery/switchery.min.js"></script>
-  <!-- App js -->
-  <script src="assets/js/pikeadmin.js"></script>
-  <!-- END Java Script for this page -->
-
-  <!-- BEGIN Java Script for this page -->
-  <script src="assets/plugins/jstree/jstree.min.js"></script>
-  <script src="javascripts/main.js"></script>
-
+  </footer>
 </body>
 
 </html>

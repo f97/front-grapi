@@ -1,0 +1,228 @@
+body {
+    font-family: inconsolata, Lucida Sans Typewriter, Lucida Console, monaco, Menlo, Bitstream Vera Sans Mono, Consolas, monospace;
+    color: rgba(0, 0, 0, 0.84);
+    line-height: 1.5;
+}
+
+a {
+    color: #1e87f0;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+h2 {
+    margin-top: 6rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+b {
+    background-color: #f8fafc;
+    font-weight: normal;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #f8fafc;
+    z-index: 99;
+}
+
+nav {
+    text-align: center;
+    border-bottom: 1px solid #f8fafc;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: inherit;
+}
+
+nav li a i {
+    margin-right: .5rem;
+}
+
+a.active {
+    color: #f96854;
+}
+
+.hljs {
+    padding: 1rem;
+}
+
+td:first-child {
+    width: 8rem;
+}
+
+.container {
+    max-width: 48rem;
+    margin: auto;
+    padding: 1rem;
+}
+
+.hero {
+    padding: 2rem 1rem;
+    text-align: center;
+    min-height: 500px;
+}
+
+.subtitle {
+    line-height: 30px;
+}
+
+.btn-using {
+    background-color: #f96854;
+    color: #FFF;
+    padding: 1rem 6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-build {
+    background: #FFF;
+    padding: 5px 15px;
+    border: 2px solid #666;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #4d4d4d;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #666;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-build:hover {
+    background-color: #f5f5f5;
+}
+
+.sponsors {
+    margin-bottom: 2rem;
+    padding: 6rem 0;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #e4e4e4;
+    text-align: center;
+}
+
+.sponsors h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    margin: auto;
+    border-radius: .2rem;
+    border: 1px dashed currentColor;
+}
+
+.box a {
+    display: inline-block;
+    padding: 4rem;
+    color: inherit;
+}
+
+.sponsors p {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+main {
+    margin-bottom: 6rem;
+}
+
+#run-button {
+    padding: .5rem 1rem;
+    margin-right: 1rem;
+    border-width: 0;
+    border-radius: .25rem;
+    background-color: #1e87f0;
+    color: white;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+#run-message {
+    opacity: 0;
+    transition: all .25s;
+}
+
+pre {
+    /* hack */
+    background: #f8f8f8;
+}
+
+#result {
+    margin: 1.5rem 0 0;
+    height: 176px;
+    opacity: 0;
+    transition: all .25s;
+}
+
+footer {
+    text-align: center;
+    background: #f8fafc;
+}
+
+/* Custom jsoneditor css */
+
+#jsoneditor {
+    max-width: 960px;
+    height: 350px;
+    margin: 0 auto;
+    display: block;
+}
+
+div.jsoneditor {
+    border-radius: 10px 10px 0 0;
+    border: thin solid #666;
+}
+
+div.jsoneditor-menu {
+    border-radius: 9px 9px 0 0;
+    background-color: #666;
+    border-bottom: 1px solid #666;
+}
+
+.jsoneditor-frame {
+    border-radius: 5px;
+}
+
+/* End jsoneditor css */
+
+.hero ul {
+    text-align: justify;
+}

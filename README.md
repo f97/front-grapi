@@ -20,3 +20,8 @@
 - Using ajax.
 - Add tree
 - Update UI
+
+#### Version 0.2.0
+
+- New front-end
+- Simple and fast.
