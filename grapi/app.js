@@ -30,12 +30,17 @@ async function playCode(publicFolder, config) {
     play.createRoutes(publicFolder, config.appName, configKeys, config);
     play.createModel(publicFolder, config.appName, configKeys, config);
 
+    // await play.installDependencies(publicFolder, config.appName, function () {
+    //     console.log(`\n\n${config.appName} REST API CREATED !`);
+    //     console.log(`\nNext Steps: \n1. Define api in ${config.appName}/api folder.\n2. Run 'npm start' is start api\n`);
+    //     console.log('Happy Coding... :)))');
+    // });
+
     zipper.sync.zip(publicFolder + config.appName).compress().save(publicFolder + config.appName + '_' + encode(id) + ".zip");
 
     rimraf.sync(publicFolder + config.appName);
-    console.log(publicFolder + config.appName + config.appName + '_' + encode(id) + '.zip');
+    console.log(publicFolder + config.appName + '_' + encode(id) + '.zip');
 
-    console.log('Done!!!');
     return config.appName + '_' + encode(id) + '.zip';
     process.exit(0);
     // } else {

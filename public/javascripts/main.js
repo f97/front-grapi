@@ -31,9 +31,14 @@ function buildAPI() {
         dataType: "text",
         data: json,
         success: function (result) {
-            $("#url-download").attr("href", result);
             $("#form-json").hide();
-            $("#api-document").show();
+            $("#spin-load").show();
+            setTimeout(function () {
+                $("#spin-load").hide();
+                $("#url-download").attr("href", result);
+                $("#api-document").show();
+            }, 500);
+
         }
     });
 }
