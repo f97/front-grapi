@@ -1,7 +1,17 @@
-<section class="hero">
+<section class="hero" id="api-build">
     <div id="jsoneditor"></div>
-    <button id="build-api" onclick="buildAPI()" class="btn-build">Tạo API</button>
-    <div id="demo"></div>
+    <button onclick="buildAPI()" class="btn btn-build"><i class="fa fa-gavel" aria-hidden="true"></i> Bắt đầu tạo
+        API</button>
 </section>
+
+<section class="api-docs" id="api-document">
+    <h3>Đã tạo xong API</h3>
+
+    <a id="url-download" href=""><input type="button" class="btn btn-download btn-green"
+            value="Click để tải API xuống"></a>
+    <h3>Dưới đây là cấu trúc thư mục API</h3>
+    <div id="jstree_demo_div"></div>
+</section>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.29.1/jsoneditor.min.js"></script>
 <script src="/js/main.js"></script>

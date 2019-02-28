@@ -25,3 +25,20 @@
 
 - New front-end
 - Simple and fast.
+
+### Version 0.2.1
+
+- Update button css.
+- Add todo.
+
+
+
+## Todolist
+
+[x] Build API with json config.
+
+[x] Simple front-end.
+
+[ ] History api of user (Save on public mongodb hosting);
+
+[ ] Document of API after build.
