@@ -28,3 +28,21 @@
  - Update API default.
  - Add document for authentication.
  - Update users model.
+
+### Version 0.0.7
+
+ - Add rest api versioning.
+ - Fix if folder exists and config.json not exists.
+
+### Version 0.0.8
+
+ - Update config data resource.
+ - Support grapi-front
+
+### Version 0.0.9
+
+ - Auto install dependencies.
+
+### Version 0.1.0
+
+ - Remove dotenv dependency.

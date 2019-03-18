@@ -1,4 +1,18 @@
+const readline = require('readline');
 const { exec } = require('child_process');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+async function input(str){
+  return new Promise((resolve, reject) => {
+    rl.question(str, (ans) => {
+      resolve(ans);
+    });
+  });
+};
 
 const execCmd = (command, cwd, callback) => {
   let cmd = exec(command, {cwd: cwd}, function(error, stdout, stderr) {
@@ -18,5 +32,6 @@ const execCmd = (command, cwd, callback) => {
 }
 
 module.exports = {
+  input,
   execCmd
 }

@@ -1,6 +1,6 @@
 {
   "name": "grapi",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "RESTful API generator using NodeJS, Express and Mongoose",
   "main": "app.js",
   "scripts": {
@@ -27,8 +27,6 @@
   },
   "homepage": "https://github.com/f97/rapi#readme",
   "dependencies": {
-    "commander": "^2.19.0",
-    "rimraf": "^2.6.3",
-    "zip-local": "^0.3.4"
+    "commander": "^2.19.0"
   }
 }

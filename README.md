@@ -31,6 +31,9 @@
 - Update button css.
 - Add todo.
 
+### Version 0.2.2
+
+- Fix some bug because grapi cli
 
 
 ## Todolist

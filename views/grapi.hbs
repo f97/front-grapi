@@ -1,3 +1,15 @@
+<section class="section" id="select-btn" style="display:none">
+    <h2 class="section__header">Bạn đã có file config chưa?</h2>
+    <button onclick="" class="btn btn-download"><i class="fa fa-gavel" aria-hidden="true"></i> ĐÃ CÓ</button>
+    <button onclick="" class="btn btn-using"><i class="fa fa-gavel" aria-hidden="true"></i> CHƯA CÓ</button>
+</section>
+
+<section class="section" id="upload" style="display:none">
+    <h2 class="section__header">Gửi file config của bạn lên</h2>
+    <input type="file" id="fileinput" />
+    <button onclick="" class="btn btn-using" id="upload"><i class="fa fa-gavel" aria-hidden="true"></i>UPLOAD</button>
+</section>
+
 <section class="hero" id="api-build">
     <div id="jsoneditor"></div>
     <button onclick="buildAPI()" class="btn btn-build"><i class="fa fa-gavel" aria-hidden="true"></i> Bắt đầu tạo
@@ -9,9 +21,9 @@
 
     <a id="url-download" href=""><input type="button" class="btn btn-download btn-green"
             value="Click để tải API xuống"></a>
-    <h3>Dưới đây là cấu trúc thư mục API</h3>
-    <div id="jstree_demo_div"></div>
+    <div>Xem hướng dẫn sử dụng API tại <a href="https://github.com/f97/grapi">https://github.com/f97/grapi</a></div>
+    {{!-- <h3>Dưới đây là cấu trúc thư mục API</h3>
+    <div id="jstree_demo_div"></div> --}}
 </section>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.29.1/jsoneditor.min.js"></script>
 <script src="/js/main.js"></script>
