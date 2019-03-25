@@ -103,7 +103,7 @@ td:first-child {
     border-style: solid;
     border-color: #e4e4e4;
     text-align: center;
-    min-height: 500px;
+    min-height: 450px;
 }
 
 #api-document {
