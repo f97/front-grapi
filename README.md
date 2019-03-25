@@ -38,10 +38,7 @@
 
 ## Todolist
 
-[x] Build API with json config.
-
-[x] Simple front-end.
-
-[ ] History api of user (Save on public mongodb hosting);
-
-[ ] Document of API after build.
+- [x] Build API with json config.
+- [x] Simple front-end.
+- [ ] History api of user (Save on public mongodb hosting);
+- [ ] Document of API after build.
