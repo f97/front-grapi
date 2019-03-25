@@ -25,16 +25,20 @@ editor.set(json);
 var json = editor.get();
 
 function buildAPI() {
-    var json = editor.get();
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("url-download").href = this.responseText;
-            document.getElementById("api-build").style.display = 'none';
-            document.getElementById("api-document").style.display = 'block';
-        }
-    };
-    xhttp.open("POST", "/build", true);
-    xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    xhttp.send(JSON.stringify(json));
+    document.getElementById("api-build").style.display = 'none';
+    document.getElementById("building").style.display = 'block';
+    setTimeout(function(){ 
+        var json = editor.get();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("url-download").href = this.responseText;
+                document.getElementById("api-document").style.display = 'block';
+                document.getElementById("building").style.display = 'none';
+            }
+        };
+        xhttp.open("POST", "/build", true);
+        xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhttp.send(JSON.stringify(json));
+    }, 1000);
 }
