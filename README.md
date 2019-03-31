@@ -35,6 +35,10 @@
 
 - Fix some bug because grapi cli
 
+### Version 0.2.3
+
+- Remove versioning.
+
 
 ## Todolist
 
