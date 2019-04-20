@@ -3,40 +3,44 @@ var container = document.getElementById("jsoneditor");
 var options = {};
 var editor = new JSONEditor(container, options);
 
-// // set json
-// var json = {
-//     "appName": "Demo",
-//     "mongoURL": "mongodb://Test123:Test123@ds145299.mlab.com:45299/dbtest123",
-//     "port": 2308,
-//     "authenticate": true,
-//     "posts": {
-//         "id": "Number",
-//         "title": "String",
-//         "author": "String"
-//     },
-//     "comments": {
-//         "body": "String",
-//         "postId": "Number"
-//     }
-// };
-
+// set json
 var json = {
-    "appName": "CongTy",
+    "appName": "Blog",
     "mongoURL": "mongodb://Test123:Test123@ds145299.mlab.com:45299/dbtest123",
     "port": 2308,
     "authenticate": true,
-    "nhanvien": {
-        "nvID": "Number",
-        "hoten": "String",
-        "gioitinh": "String",
-        "luong": "String",
-        "pbID": "Number"
+    "posts": {
+        "id": "Number",
+        "title": "String",
+        "author": "String"
     },
-    "phongban": {
-        "pbID": "Number",
-        "tenPB": "String"
+    "comments": {
+        "id": "Number",
+        "body": "String",
+        "postId": "Number"
+    },
+    "profile":{
+        "name": "Number"
     }
-}
+};
+
+// var json = {
+//     "appName": "CongTy",
+//     "mongoURL": "mongodb://Test123:Test123@ds145299.mlab.com:45299/dbtest123",
+//     "port": 2308,
+//     "authenticate": true,
+//     "nhanvien": {
+//         "nvID": "Number",
+//         "hoten": "String",
+//         "gioitinh": "String",
+//         "luong": "String",
+//         "pbID": "Number"
+//     },
+//     "phongban": {
+//         "pbID": "Number",
+//         "tenPB": "String"
+//     }
+// }
 editor.set(json);
 
 // get json
